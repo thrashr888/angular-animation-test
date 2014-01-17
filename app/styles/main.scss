@@ -1,6 +1,6 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
-@import 'sass-bootstrap/lib/bootstrap';
+@import '../bower_components/sass-bootstrap/lib/bootstrap';
 
 .browsehappy {
     margin: 0.2em 0;
@@ -91,7 +91,8 @@ body {
 }
 
 .ng-enter, .ng-leave {
-    display: auto;
+  display: block;
+  border: 1px solid red;
 }
 
 /*
@@ -125,5 +126,11 @@ body {
 .slide.ng-enter-active { } /* terminal animations for enter */
 .slide.ng-leave { }        /* starting animations for leave */
 .slide.ng-leave-active {
-opacity: 0;
+  opacity: 0;
 } /* terminal animations for leave */
+
+h4 {
+  background-color: rgba(255, 254, 53, 0.07);
+  padding: 1em;
+  margin: 0px;
+}

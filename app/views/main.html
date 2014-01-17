@@ -7,10 +7,15 @@
 </div>
 
 <div class="jumbotron">
+    Jumbo!
 </div>
 
 <div class="row marketing">
   <h4 ng-repeat="item in items | orderByPriority" class="animated slideInLeft">
+    <a ng-href="/item/{{item.$id}}"><em>{{item.from}}</em>: {{item.content}}</a>
+  </h4>
+
+  <h4 ng-repeat="item in items | orderByPriority" class="list">
     <a ng-href="/item/{{item.$id}}"><em>{{item.from}}</em>: {{item.content}}</a>
   </h4>
 

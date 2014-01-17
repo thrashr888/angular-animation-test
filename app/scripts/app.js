@@ -13,9 +13,11 @@ angular.module('angularAnimationTestApp', [
   .run(function ($rootScope) {
     $rootScope.$on('$routeChangeStart', function() {
         // console.log($scope, $rootScope, $route, $location);
-    });
+        console.log('test');
+      });
     $rootScope.$on('$routeChangeSuccess', function() {
         // console.log($scope, $rootScope, $route, $location);
+        console.log('test');
     });
   })
 
@@ -25,7 +27,11 @@ angular.module('angularAnimationTestApp', [
         templateUrl: '/views/main.html',
         controller: 'MainCtrl',
         resolve: {
-          items: function (firebaseUrl, $firebase) {
+          items: function (firebaseUrl, $firebase, $animate) {
+            var el = angular.element('.marketing');
+            $animate.addClass(el, 'list', function () {
+                console.log('done');
+              });
             return $firebase(new Firebase(firebaseUrl + '/items').limit(15));
           }
         }
